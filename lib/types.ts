@@ -25,3 +25,24 @@ export type Perfil = {
   created_at?: string;
   updated_at?: string;
 };
+
+export type Examen = {
+  id: string;
+  titulo: string;
+  descripcion: string | null;
+  created_at?: string;
+  updated_at?: string;
+};
+
+export type ExamenPregunta = {
+  id: string;
+  examen_id: string;
+  orden: number;
+  pregunta_id: string | null;
+  enunciado_manual: string | null;
+  created_at?: string;
+};
+
+export type ExamenPreguntaConTexto = ExamenPregunta & {
+  enunciado: string; // desde banco (preguntas.enunciado) o enunciado_manual
+};
