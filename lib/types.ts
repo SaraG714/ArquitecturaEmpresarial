@@ -6,11 +6,22 @@ export type Tema = {
 
 export type Pregunta = {
   id: string;
-  texto: string;
+  enunciado: string;
   tema_id: string | null;
   created_at?: string;
 };
 
 export type PreguntaConTema = Pregunta & {
   temas: { nombre: string } | null;
+};
+
+export type Rol = "profesor" | "estudiante";
+
+export type Perfil = {
+  id: string;
+  user_id: string;
+  nombre: string | null;
+  rol: Rol;
+  created_at?: string;
+  updated_at?: string;
 };
